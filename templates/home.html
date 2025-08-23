@@ -1,6 +1,9 @@
 <!DOCTYPE html> 
 <html>
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-            scale=1">
     <title>Shark Tank Deals Calculator</title>
     <style>
       h1 {
@@ -28,21 +31,34 @@
       #container{
         max-width: 720px;
         margin: 0 auto 0 auto;
+      
+      .times_new_roman{
+        font-family: Times New Roman;
+      }
       }
 
     </style>
   </head>
   <body>
-    <div id = "container">
-    <h1>Shark Tank Deals Calculator<h1>
-    <img id = "banner" src = "https://0326de76-bd41-4643-b683-d0d9aaf96a01-00-1wh9z2a2iv2mi.riker.replit.dev/static/Sharks.png">
-    <h2>Inputing Business Data And Functionality</h2>
-    <p1 class = "BodyText"> 
+    <div class = "container">
+    <h1 class= "mb-5">Shark Tank Deals Calculator<h1>
+    <img class = "img-fluid" src = "https://0326de76-bd41-4643-b683-d0d9aaf96a01-00-1wh9z2a2iv2mi.riker.replit.dev/static/Sharks.png">
+    <h2 class = "mt-5 mb-5">Inputing Business Data And Functionality</h2>
+    <p1 class = "lead" class = "times_new_roman"> 
      Using the simple KNN training model we find related business with similar numerical statistics such as revenue, debt, and sales. Based on the number of deals given to business in our database, we will predict the number of deals you will recieve.  
     </p1>
-    <h3><center>Input Data </center></h3>
-    <center><button>Calculate</button></center>
-      </div>
+      
+    <h3 class = "mb-5"><center>Input Data(USD) </center></h3>
+    <div>
+      {% for data in input_data %} 
+        <div> 
+          {{input_data['Title']}}
+        </div>
+      {% endfor %}
+      
+    </div>
+    <center><button class="btn btn-primary" type="submit">Calculate</button></center>
+    </div>
   </body>
 
 
