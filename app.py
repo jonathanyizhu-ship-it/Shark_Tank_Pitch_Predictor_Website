@@ -1,8 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
- app = Flask(__name__)
+app = Flask(__name__)
 
- INPUT_DATA = [
+INPUT_DATA = [
    {
      'id': 1,
      'Title': 'Market Value',
@@ -36,9 +36,13 @@ from flask import Flask, render_template
    }
  ]
 
- @app.route("/")
- def hello_world():
-   return render_template('home.html',input_data = INPUT_DATA )
+@app.route("/")
+def hello_world():
+  return render_template('home.html',input_data = INPUT_DATA )
 
- if __name__ == "__main__":
-   app.run(host="0.0.0.0", debug = True)
+@app.rout("/api/input_data")
+def data_input():
+  return jsonify(INPUT_DATA)
+
+if __name__ == "__main__":
+  app.run(host="0.0.0.0", debug = True)
