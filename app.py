@@ -40,7 +40,7 @@ INPUT_DATA = [
 def hello_world():
   return render_template('home.html',input_data = INPUT_DATA )
 
-@app.rout("/api/input_data")
+@app.route("/api/input_data")
 def data_input():
   return jsonify(INPUT_DATA)
 
