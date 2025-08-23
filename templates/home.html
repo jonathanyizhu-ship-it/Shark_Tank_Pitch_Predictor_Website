@@ -31,30 +31,35 @@
       #container{
         max-width: 720px;
         margin: 0 auto 0 auto;
+        
+      }
       
       .times_new_roman{
         font-family: Times New Roman;
+      }
+      h3 {
+        font-size: 20px;
+        font-family: Times New Roman;
+        font-weight: normal; 
       }
       }
 
     </style>
   </head>
   <body>
-    <div class = "container">
-    <h1 class= "mb-5">Shark Tank Deals Calculator<h1>
-    <img class = "img-fluid" src = "https://0326de76-bd41-4643-b683-d0d9aaf96a01-00-1wh9z2a2iv2mi.riker.replit.dev/static/Sharks.png">
-    <h2 class = "mt-5 mb-5">Inputing Business Data And Functionality</h2>
-    <p1 class = "lead" class = "times_new_roman"> 
+    <div style = "margin-top: 52px;" class = "container">
+    <h1 class= "mb-5">Shark Tank Deals Calculator</h1>
+    <img style = "margin-bottom: 52px;" class = "img-fluid" src = "https://0326de76-bd41-4643-b683-d0d9aaf96a01-00-1wh9z2a2iv2mi.riker.replit.dev/static/Sharks.png">
+    <h2> <b>Functionality </b></h2>
+      <div style = "margin-bottom: 80px;">
+      <p1 class = "lead" class = "times_new_roman"> 
      Using the simple KNN training model we find related business with similar numerical statistics such as revenue, debt, and sales. Based on the number of deals given to business in our database, we will predict the number of deals you will recieve.  
+    </div>
     </p1>
       
-    <h3 class = "mb-5"><center>Input Data(USD) </center></h3>
+    <h3 class = "mb-4"> <b>Input Data(USD) </b></h3>
     <div>
-      {% for data in input_data %} 
-        <div> 
-          {{input_data['Title']}}
-        </div>
-      {% endfor %}
+      {% include 'inputdata.html' %}
       
     </div>
     <center><button class="btn btn-primary" type="submit">Calculate</button></center>
@@ -62,4 +67,4 @@
   </body>
 
 
-<html>
+</html>
