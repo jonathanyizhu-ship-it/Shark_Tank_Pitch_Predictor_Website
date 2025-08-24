@@ -1,8 +1,13 @@
-[project]
-name = "repl-nix-workspace"
+[tool.poetry]
+name = "sharktank_app"
 version = "0.1.0"
-description = "Add your description here"
-requires-python = ">=3.13"
-dependencies = [
-    "flask>=3.1.2",
-]
+description = "Predict Shark Tank deals using KNN"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.3.0"
+pandas = "^2.1.0"
+numpy = "^1.26.0"
+
+

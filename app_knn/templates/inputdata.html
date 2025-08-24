@@ -1,0 +1,32 @@
+<div style="text-align:center;">
+  <form id="predictForm" method="POST">
+    {% for field in input_data %}
+      <label for="field{{ field['id'] }}"><b>{{ field['Title'] }}</b></label><br>
+      <small>{{ field['Description'] }}</small><br>
+      <div style="margin-bottom: 20px;">
+        <input
+          type="number"
+          id="field{{ field['id'] }}"
+          name="{{ field['Title'] | replace(' ', '_') | lower }}"
+          placeholder="{{ field['Title'] }}"
+          required
+        >
+      </div>
+    {% endfor %}
+    <button type="submit">Predict</button>
+  </form>
+
+  <h4 id="result"></h4>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("predictForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    const response = await fetch("/predict", { method: "POST", body: formData });
+    const result = await response.json();
+    document.getElementById("result").innerText = "Prediction: " + result.prediction;
+  });
+});
+</script>
